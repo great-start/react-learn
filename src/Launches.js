@@ -11,14 +11,9 @@ function Launches() {
         fetch('https://api.spacexdata.com/v3/launches/')
             .then(response => response.json())
             .then(items => {
-                // const launchesArr = [];
-                // items.forEach(item => {
-                //     if (item.launch_year !== '2020') {
-                //         launchesArr.push(item);
-                //     }
-                // })
-                setLaunches(items);
-            })
+                // setLaunches(items.filter(item => item.lauch_year !== '2020'))}
+                setLaunches(items)}
+            )
     }, []);
 
     return (
