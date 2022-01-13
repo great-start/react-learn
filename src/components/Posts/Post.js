@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Post = ({id : sdfsdf, title}) => {
-    console.log(sdfsdf);
+
+const Post = ({id, title, showComments}) => {
+
     return (
-        <div>
-            {sdfsdf}---{title}
-        </div>
+        <>
+            <p><b>PostId: </b> {id} <b>Title:</b> {title}</p>
+            <button onClick={() => showComments(id)}>Show Comments</button>
+        </>
     );
 };
 

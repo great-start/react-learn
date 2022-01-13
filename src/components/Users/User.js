@@ -1,6 +1,7 @@
 import React from 'react';
 
-const User = ({user : {id, name}, showPosts}) => {
+
+const User = ({user: {id, name}, showPosts}) => {
 
     return (
         <div>

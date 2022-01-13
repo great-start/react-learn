@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 10px;
+    margin: 0 auto;
 }
 
 div {
@@ -10,15 +11,19 @@ div {
 }
 
 .users {
-    flex: 0.5;
+    width: 48%;
     border: 1px solid grey;
     padding: 10px;
 }
 
 .posts {
-    flex: 0.5;
+    width: 48%;
     border: 1px solid grey;
     padding: 10px;
 }
 
-
+.comments {
+    flex: 1;
+    border: 1px solid grey;
+    padding: 10px;
+}
