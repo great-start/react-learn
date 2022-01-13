@@ -1,9 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import Users from "../Users/Users";
+import Post from "./Post";
 
-const Posts = () => {
-    console.log(userId);
+function Posts({posts}) {
+
+    return (
+        <div className={'posts'}>
+            {
+                posts.map(post => <Post key={post.id} id={post.id} title={post.title}/>)
+            }
+        </div>
+    );
 }
 
 export default Posts;
+

@@ -1,16 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-
-const User = ({user}) => {
-
-    const [userId, setUserId] = useState(null);
-
-    console.log();
+const User = ({user : {id, name}, showPosts}) => {
 
     return (
         <div>
-            <p><b>Id:</b>{user.id} - <b>Name:</b>{user.name}.</p>
-            <button onClick={setUserId}>Show User Posts</button>
+            <p><b>Id:</b>{id} - <b>Name:</b>{name}.</p>
+            <button onClick={() => showPosts(id)}>Show User Posts</button>
         </div>
     );
 };
