@@ -1,13 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Users = (props) => {
-    const {name, age} = props.children[0];
+import {users_service} from "../../services/users_service";
+import User from "./User";
+
+function Users() {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        users_service.getAll()
+            .then(users => setUsers(users));
+    },[])
 
     return (
-        <div>
-            Hello {props.children[1]}. Your wife name: {name}. Her age is {age}
-        </div>
-    );
-};
+        users.map(user =>
+            <User key={user.id} user={user}/>
+        ));
+}
+
 
 export default Users;
