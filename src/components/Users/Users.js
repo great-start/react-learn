@@ -1,22 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
-const Users = () => {
+import User from "./User";
 
-    const [users, setUsers] = useState([]);
+const Users = ({users}) => {
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(users => setUsers(users));
-    },[]);
-
-    return (
-        <div className={'users'}>
-            {users.map(user =>
-                <p key={user.id}>ID:{user.id} - {user.name}</p>
-            )}
-        </div>
+    return users.map(user =>
+        <User key={user.id} user={user}/>
     );
+
 };
 
 export default Users;

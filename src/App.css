@@ -1,24 +1,14 @@
 #root {
-    display: flex;
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 10px;
 }
 
 .users {
-    flex: 1;
-    border: 1px solid grey;
-    padding: 10px;
+    width: 50%;
 }
-
-.posts {
-    flex: 1;
-    border: 1px solid grey;
-    padding: 10px;
-}
-
-.comments {
-    width: 100%;
-    border: 1px solid grey;
+.user {
+    border: 2px solid black;
+    margin: 10px;
     padding: 10px;
 }
