@@ -14,9 +14,17 @@ function App() {
             .then(users => setUsers(users))
     },[])
 
+    function formHandler(form) {
+        setUsers(() => {
+            return users.filter(user =>
+                user.name.includes(form.name) && user.username.includes(form.username) && user.email.includes(form.email)
+            )
+        })
+    }
+
     return (
         <>
-            <Form setUsers={setUsers} users={users}/>
+            <Form users={users} formHandler={formHandler}/>
             <Users users={users}/>
         </>
     );
