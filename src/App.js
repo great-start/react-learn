@@ -10,7 +10,6 @@ function App() {
     const [users, setUsers] = useState([]);
     const [form, setForm] = useState({name: '', username: '', email: ''});
 
-
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
@@ -19,11 +18,11 @@ function App() {
 
     function formHandler(e) {
         e.preventDefault();
-        // setUsers(() => {
-        //     return users.filter(user =>
-        //         console.log(user.name.includes(form.name))
-        //     )
-        // })
+        setUsers(() => {
+            return users.filter(user =>
+                user.name.includes(form.name) && user.username.includes(form.username) && user.email.includes(form.email)
+            )
+        })
         console.log(form);
         console.log(users);
     }
