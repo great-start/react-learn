@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import Post from "./Post";
+import {posts_service} from "../../services/posts_service";
 
-function Posts({posts, showComments}) {
+function Posts({userId, showComments}) {
+
+    const [posts, setPosts] = useState(null);
+
+    useEffect(() => {
+        posts_service.getAllById(userId)
+            .then(posts => setPosts(posts))
+    },[userId])
 
     return (
         <div className={'posts'}> {
