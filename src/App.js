@@ -24,9 +24,9 @@ function App() {
 
     return (
         <>
-            <Users showPosts={showPosts} />
-            { posts && <Posts posts={posts} showComments={showComments}/> }
-            { comments && <Comments comments={comments} /> }
+            <Users showPosts={showPosts}/>
+            {posts && <Posts posts={posts} showComments={showComments}/>}
+            {comments && <Comments comments={comments}/>}
         </>
     );
 }

@@ -4,9 +4,10 @@ const Comment = ({comment: {id, name, body}}) => {
 
     return (
         <div>
-            <p>Comment: {id}</p>
-            <p>Name: {name}</p>
-            <p>Body: {body}</p>
+            <p><b>Comment:</b> {id}</p>
+            <p><b>Name:</b> {name}</p>
+            <p><b>Body:</b> {body}</p>
+            <hr/>
         </div>
     );
 };

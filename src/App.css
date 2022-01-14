@@ -6,24 +6,49 @@
     margin: 0 auto;
 }
 
+p {
+    margin: 5px;
+}
+
 div {
     box-sizing: border-box;
 }
 
 .users {
-    width: 48%;
+   flex: 0.5;
     border: 1px solid grey;
-    padding: 10px;
+    padding: 5px;
+}
+
+.user {
+    background: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.user:hover {
+    background: antiquewhite;
 }
 
 .posts {
-    width: 48%;
+    flex: 0.5;
     border: 1px solid grey;
-    padding: 10px;
+    padding: 5px;
 }
 
+.post {
+    background: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.post:hover {
+    background: antiquewhite;
+}
 .comments {
-    flex: 1;
+    width: 100%;
     border: 1px solid grey;
-    padding: 10px;
+    padding: 5px;
 }
