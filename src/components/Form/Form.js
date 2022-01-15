@@ -4,22 +4,18 @@ const Form = ({formHandler}) => {
 
     const [form, setForm] = useState({name: '', username: '', email: ''});
 
-    console.log(form);
-
-    function handlerInput(e) {
-        // e.preventDefault();
-        const event = {...form, [e.target.name]: e.target.value};
-        setForm({...form, ...event});
-        formHandler(event);
+    function inputHandler(e) {
+        const formData = {...form, [e.target.name]: e.target.value};
+        setForm({...form, ...formData});
+        formHandler(formData);
     }
 
     return (
         <div>
             <form>
-                <label>Name: <input type="text" name={'name'} value={form.name} onChange={handlerInput}/></label>
-                <label>Username: <input type="text" name={'username'} value={form.username} onChange={handlerInput}/></label>
-                <label>Email: <input type="text" name={'email'} value={form.email} onChange={handlerInput}/></label>
-                <button>Send</button>
+                <label>Name: <input type="text" name={'name'} value={form.name} onChange={inputHandler}/></label>
+                <label>Username: <input type="text" name={'username'} value={form.username} onChange={inputHandler}/></label>
+                <label>Email: <input type="text" name={'email'} value={form.email} onChange={inputHandler}/></label>
             </form>
         </div>
     );

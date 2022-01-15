@@ -4,7 +4,7 @@ const User = ({user}) => {
 
     return (
         <div className={'user'}>
-            {user.id} -- {user.name} -- {user.username} -- {user.email}
+            {user.id}.  {user.name} -- {user.username} -- {user.email}
         </div>
     );
 };
