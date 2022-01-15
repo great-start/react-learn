@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Comment from "./Comment";
+import {comments_service} from "../../services/comments_service";
 
-const Comments = ({comments}) => {
+const Comments = ({showComments}) => {
+
+    const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        comments_service.getAllById(showComments)
+            .then(comments => setComments(comments))
+    },[showComments])
 
     return (
         <div className={'comments'}>
