@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 
 import Comment from "./Comment";
-import {comments_service} from "../../services/comments_service";
+import axios from "axios";
 
 const Comments = ({showComments}) => {
 
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        comments_service.getAllById(showComments)
-            .then(comments => setComments(comments))
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${showComments}/comments`)
+            .then(comments => setComments(comments.data))
     },[showComments])
 
     return (

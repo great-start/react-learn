@@ -4,6 +4,7 @@ import './App.css';
 import Users from "./components/Users/Users";
 import Posts from "./components/Posts/Posts";
 import Comments from "./components/Comments/Comments";
+import css from './App.module.css';
 
 function App() {
 
@@ -16,11 +17,11 @@ function App() {
     }
 
     return (
-        <>
+        <div className={css.wrap}>
             <Users showPosts={showPosts}/>
             {userId && <Posts showComments={setShowComments} userId={userId}/>}
             {showComments && <Comments showComments={showComments}/>}
-        </>
+        </div>
     );
 }
 
