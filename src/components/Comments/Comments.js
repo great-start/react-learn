@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Comments = ({showComments}) => {
 
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState(null);
 
     useEffect(() => {
         axios.get(`https://jsonplaceholder.typicode.com/posts/${showComments}/comments`)
@@ -13,6 +13,7 @@ const Comments = ({showComments}) => {
     },[showComments])
 
     return (
+        comments &&
         <div className={'comments'}>
             {
                 comments.map(comment =>

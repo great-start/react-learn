@@ -5,7 +5,7 @@ import axios from "axios";
 
 function Users({showPosts}) {
 
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState(null);
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users')
@@ -13,6 +13,7 @@ function Users({showPosts}) {
     },[])
 
     return (
+        users &&
         <div className={'users'}> {
             users.map(user =>
                 <User key={user.id} user={user} showPosts={showPosts}/>
