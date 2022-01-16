@@ -1,16 +1,14 @@
 import React from "react";
 
-import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
-import Comments from "./components/Comments/Comments";
 import './App.css';
+import Form from "./components/Form/Form";
+import Cars from "./components/Cars/Cars";
 
 function App() {
   return (
       <>
-        <Users/>
-        <Posts/>
-        <Comments/>
+          <Form />
+          <Cars />
       </>
   );
 }
