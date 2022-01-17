@@ -1,10 +1,16 @@
 import React from 'react';
 
-const Car = () => {
+const Car = ({car: {id, model, price, year}}) => {
+
     return (
-        <div>
-            
-        </div>
+        <>
+            <ul>
+                <li>ID: {id}</li>
+                <li>Model: {model}</li>
+                <li>Price: {price}</li>
+                <li>Year: {year}</li>
+            </ul>
+        </>
     );
 };
 
