@@ -4,18 +4,24 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 import {carServices} from "../../services/car.services";
 import {CarValidator} from "../../validators/car.validator";
+import css from './Forms.module.css'
 
-const Form =() => {
+const CreateFrom =({setAllCars}) => {
 
     const [formError, setFormErrors] = useState({});
+    const [createdCar,setCreatedCar] = useState(null);
 
     const {
         register, handleSubmit, watch, formState:{errors}
     } = useForm({resolver:joiResolver(CarValidator), mode:"onTouched"});
 
     function submit(data) {  // выводит нашу форму
-        console.log(data)
-        carServices.create(data).then(response => console.log(response)).catch(errors => setFormErrors(errors.response.data))  // отлавливание ошибок
+        console.log(data);
+        carServices.create(data)
+            .then(response => console.log(response))
+            .catch(errors => setFormErrors(errors.response.data));                  // отлавливание   ошибок
+        setCreatedCar(data);
+        setAllCars(data);
     }
 
     // async function submit (data) {                        //   используя async await
@@ -32,7 +38,7 @@ const Form =() => {
     console.log(formError);
 
     return (
-        <div>
+        <div className={css.createFrom}>
             <form onSubmit={handleSubmit(submit)}>
                 <div><label>Model: <input type="text" defaultValue={''} {...register('model')}/></label></div>
                 {/*{formError.model && <span>{formError.model[0]}</span>}*/}
@@ -43,10 +49,11 @@ const Form =() => {
                 <div><label>Year: <input type="text" defaultValue={''} {...register('year')}/></label></div>
                 {/*{formError.year && <span>{formError.year[0]}</span>}*/}
                 {errors.year && <span>{errors.year.message}</span>}
-                <button>SEND</button>
+                <button>CREATE</button>
+                {createdCar && <span>Car with id {createdCar.id} was created</span>}
             </form>
         </div>
 )
 }
 
-export default Form;
+export default CreateFrom;
