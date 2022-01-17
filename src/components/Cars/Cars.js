@@ -14,7 +14,7 @@ const Cars = ({rerenderCarList}) => {
     },[rerenderCarList])
 
     return (
-        <div className={css.cars}>ALL CARS in DataBase:
+        <div className={css.cars}>ALL CARS in DataBase in real time:
             {cars.map(car =>
                 <Car key={car.id} car={car} />
             )}

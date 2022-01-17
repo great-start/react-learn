@@ -17,23 +17,22 @@ const DeleteForm = ({setRerenderCarList3, rerenderCarList}) => {
     },[deletedCar, rerenderCarList]);
 
     function deleteCar(car) {
-        console.log(car.id);
         carServices.deleteById(car.id).then(response => console.log(response));
         setDeletedCar(car.id);
         setRerenderCarList3(car.id);
     }
 
-return (
-    <div className={css.deleteFrom}>
-        <form onSubmit={handleSubmit(deleteCar)}>
-            <select defaultValue={''} {...register('id')}>
-                {cars.map(car => <option key={car.id}>{car.id}</option>)}
-            </select>
-            <button>DELETE</button>
-            {deletedCar && <div>Car with id: {deletedCar} in deleting progress</div>}
-        </form>
-    </div>
-)
+    return (
+        <div className={css.deleteFrom}>
+            <form onSubmit={handleSubmit(deleteCar)}>
+                <label>Select Car ID: <select defaultValue={''} {...register('id')}>
+                    {cars.map(car => <option key={car.id}>{car.id}</option>)}
+                </select></label>
+                <button>DELETE</button>
+                {deletedCar && <div>Car with id: {deletedCar} <b>deleted</b></div>}
+            </form>
+        </div>
+    );
 }
 
 export default DeleteForm;

@@ -20,7 +20,6 @@ function App() {
             <Cars rerenderCarList={rerenderCarList}/>
         </>
     );
-
 }
 
 export default App;
