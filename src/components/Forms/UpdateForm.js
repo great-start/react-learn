@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
 
 import {carServices} from "../../services/car.services";
 import css from './Forms.module.css'
 
-const UpdateForm = () => {
+const UpdateForm = ({setRerenderCarList}) => {
 
-    const { register, handleSubmit } = useForm();
+    const [formErrors, setFormErrors] = useState(null);
+    const [updatedCar, setUpdatedCar] = useState(null);
+
+    const { register, handleSubmit, } = useForm();
 
     const handler = (data) => {
-        console.log(data);
-        carServices.updateById(data.id, data).then(response => console.log(response)).catch(errors => console.log(errors));
+        carServices.updateById(data.id, data)
+            .then(response => setUpdatedCar(response))
+            .catch(errors => setFormErrors(errors.response.data));
+        setRerenderCarList(data.id);
     }
 
     return (
@@ -21,6 +26,8 @@ const UpdateForm = () => {
                 <div><label>Price: <input type="text" defaultValue={''} {...register('price')} /></label></div>
                 <div><label>Year: <input type="text" defaultValue={''} {...register('year')} /></label></div>
             <button>Update</button>
+                {updatedCar && <span>Car with id {updatedCar.id} was updated</span>}
+                {formErrors && <span>{formErrors.model}</span>}
             </form>
         </div>
     );

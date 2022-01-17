@@ -4,25 +4,23 @@ import {carServices} from "../../services/car.services";
 import {useForm} from "react-hook-form";
 import css from './Forms.module.css'
 
-const DeleteForm = ({setRemainingCars}) => {
+const DeleteForm = ({setRerenderCarList3, rerenderCarList}) => {
 
     const {register, handleSubmit} = useForm();
     const [deletedCar,setDeletedCar] = useState(null);
-
-    console.log(deletedCar);
 
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
         setTimeout(() =>
             carServices.getAll().then(cars => setCars([...cars])), 800);
-    },[deletedCar]);
+    },[deletedCar, rerenderCarList]);
 
     function deleteCar(car) {
         console.log(car.id);
         carServices.deleteById(car.id).then(response => console.log(response));
         setDeletedCar(car.id);
-        setRemainingCars(car.id);
+        setRerenderCarList3(car.id);
     }
 
 return (

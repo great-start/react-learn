@@ -6,7 +6,7 @@ import {carServices} from "../../services/car.services";
 import {CarValidator} from "../../validators/car.validator";
 import css from './Forms.module.css'
 
-const CreateFrom =({setAllCars}) => {
+const CreateFrom =({setRerenderCarList2}) => {
 
     const [formError, setFormErrors] = useState({});
     const [createdCar,setCreatedCar] = useState(null);
@@ -16,13 +16,13 @@ const CreateFrom =({setAllCars}) => {
     } = useForm({resolver:joiResolver(CarValidator), mode:"onTouched"});
 
     function submit(data) {  // выводит нашу форму
-        console.log(data);
         carServices.create(data)
-            .then(response => console.log(response))
-            .catch(errors => setFormErrors(errors.response.data));                  // отлавливание   ошибок
-        setCreatedCar(data);
-        setAllCars(data);
+            .then(response => setCreatedCar(response))
+            .catch(errors => setFormErrors(errors.response.data));                  // отлавливание ошибок
+        setRerenderCarList2(data);
     }
+
+    console.log(createdCar);
 
     // async function submit (data) {                        //   используя async await
     //     try {

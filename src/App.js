@@ -8,17 +8,16 @@ import DeleteForm from "./components/Forms/DeleteForm";
 
 function App() {
 
-    const [remainingCars, setRemainingCars] = useState(null);
-    const [allCars,setAllCars] = useState(null);
+    const [rerenderCarList, setRerenderCarList] = useState(null);
 
     return (
         <>
             <div className={'wrap'}>
-                <CreateFrom setAllCars={setAllCars}/>
-                <UpdateForm/>
-                <DeleteForm setRemainingCars={setRemainingCars}/>
+                <CreateFrom setRerenderCarList2={setRerenderCarList} />
+                <UpdateForm setRerenderCarList={setRerenderCarList}/>
+                <DeleteForm setRerenderCarList3={setRerenderCarList} rerenderCarList={rerenderCarList}/>
             </div>
-            <Cars remainingCars={remainingCars} allCars={allCars}/>
+            <Cars rerenderCarList={rerenderCarList}/>
         </>
     );
 
