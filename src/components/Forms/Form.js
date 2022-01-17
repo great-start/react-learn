@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
+
 import {carServices} from "../../services/car.services";
+import {CarValidator} from "../../validators/car.validator";
 
 const Form =() => {
 
@@ -8,9 +11,10 @@ const Form =() => {
 
     const {
         register, handleSubmit, watch, formState:{errors}
-    } = useForm();
+    } = useForm({resolver:joiResolver(CarValidator), mode:"onTouched"});
 
     function submit(data) {  // выводит нашу форму
+        console.log(data)
         carServices.create(data).then(response => console.log(response)).catch(errors => setFormErrors(errors.response.data))  // отлавливание ошибок
     }
 
@@ -29,14 +33,17 @@ const Form =() => {
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit(submit)}>
                 <div><label>Model: <input type="text" defaultValue={''} {...register('model')}/></label></div>
-                {formError.model && <span>{formError.model[0]}</span>}
+                {/*{formError.model && <span>{formError.model[0]}</span>}*/}
+                {errors.model && <span>{errors.model.message}</span>}
                 <div><label>Price: <input type="text" defaultValue={''} {...register('price')}/></label></div>
-                {formError.price && <span>{formError.price[0]}</span>}
+                {/*{formError.price && <span>{formError.price[0]}</span>}*/}
+                {errors.price && <span>{errors.price.message}</span>}
                 <div><label>Year: <input type="text" defaultValue={''} {...register('year')}/></label></div>
-                {formError.year && <span>{formError.year[0]}</span>}
-                <button onClick={handleSubmit(submit)}>SEND</button>
+                {/*{formError.year && <span>{formError.year[0]}</span>}*/}
+                {errors.year && <span>{errors.year.message}</span>}
+                <button>SEND</button>
             </form>
         </div>
 )
