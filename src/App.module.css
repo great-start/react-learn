@@ -1,4 +1,15 @@
 .wrap {
     height: 100px;
     background: brown;
+    display: flex;
+}
+
+.wrap > ul {
+    display: flex;
+    margin: auto auto;
+    list-style: none;
+}
+
+.wrap > ul > li {
+    font-size: 24px;
 }

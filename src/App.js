@@ -1,7 +1,9 @@
 import React from "react";
 import {Routes, Route, Link} from "react-router-dom";
 
-import css from "./App.module.css"
+import css from "./App.module.css";
+import Users from "./components/Users";
+import Posts from "./components/Posts";
 
 function App() {
     return (
@@ -14,8 +16,9 @@ function App() {
             </div>
             <div>
                 <Routes>
-                    <Route path={'/users'} element={''}/>
-                    <Route path={'/posts'} element={''}/>
+                    <Route path={'/'} />
+                    <Route path={'/users'} element={<Users />}/>
+                    <Route path={'/posts'} element={<Posts />}/>
                 </Routes>
             </div>
         </>
