@@ -1,0 +1,15 @@
+.userDetails {
+    margin: 10px;
+}
+
+.postDetails {
+    margin: 10px;
+
+}
+
+.singlePost {
+    background: #b3bbc0;
+    border: 1px solid rebeccapurple;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,45 @@
+body {
+    overflow: scroll;
+}
+
+.wrap {
+    height: 100px;
+    background: brown;
+    display: flex;
+}
+
+.wrap > nav {
+    display: flex;
+    margin: auto;
+    gap: 20px;
+}
+
+.wrap nav > a {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+}
+
+.wrap > nav > a[class='active'] {
+    color: white;
+}
+
+.mainContent {
+    display: flex;
+    background: #eeeeee;
+}
+
+.mainContent > div {
+    flex: 1;
+    padding: 10px;
+}
+
+p,h4 {
+    margin: 5px;
+    padding: 0;
+}
+
+button {
+    margin: 5px;
+
+}

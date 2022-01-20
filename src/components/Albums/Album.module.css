@@ -1,0 +1,16 @@
+.singleAlbum {
+    background: #b3bbc0;
+    border: 1px solid rebeccapurple;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+
+.singleAlbum > a {
+    display: block;
+    padding: 6px;
+}
+
+.singleAlbum > a > button {
+    width: 100%;
+    margin: auto;
+}

@@ -1,26 +1,29 @@
 import React from "react";
-import {Routes, Route, Link} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
-import css from "./App.module.css";
-import Users from "./components/Users";
-import Posts from "./components/Posts";
+import {Albums, Comments, Layout, Photos, Posts, Users} from "./components";
+import {PostDetails, UserDetails, UserPosts} from "./pages";
 
 function App() {
     return (
         <>
-            <div className={css.wrap}>
-                <ul>
-                    <li><Link to={'/users'}>Users</Link></li>
-                    <li><Link to={'/posts'}>Posts</Link></li>
-                </ul>
-            </div>
-            <div>
-                <Routes>
-                    <Route path={'/'} />
-                    <Route path={'/users'} element={<Users />}/>
-                    <Route path={'/posts'} element={<Posts />}/>
-                </Routes>
-            </div>
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'users'} element={<Users/>}>
+                        <Route path={':id'} element={<UserDetails/>}>
+                            <Route path={'posts'} element={<UserPosts/>}/>
+                        </Route>
+                        <Route path={':id/albums'} element={<Albums/>}>
+                            <Route path={':albumId/photos'} element={<Photos/>}/>
+                        </Route>
+                    </Route>
+                    <Route path={'posts'} element={<Posts/>}>
+                        <Route path={':id'} element={<PostDetails/>}>
+                            <Route path={'comments'} element={<Comments/>}/>
+                    </Route>
+                    </Route>
+                </Route>
+            </Routes>
         </>
     );
 }
