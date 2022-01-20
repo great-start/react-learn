@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {userServices} from "../../services/user.services";
 import {Outlet, useParams} from "react-router-dom";
+
+import {userServices} from "../../services/user.services";
 import {Album} from "./Album";
 
 export const Albums = () => {
@@ -19,7 +20,9 @@ export const Albums = () => {
             <div>
                 {albums.map(album => <Album key={album.id} album={album}/>)}
             </div>
-            <div><Outlet /></div>
+            <div>
+                <Outlet />
+            </div>
         </>
     );
 };

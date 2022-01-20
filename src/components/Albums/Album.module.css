@@ -3,6 +3,7 @@
     border: 1px solid rebeccapurple;
     border-radius: 7px;
     margin-bottom: 5px;
+    transition: all 500ms ease;
 }
 
 .singleAlbum > a {
@@ -13,4 +14,9 @@
 .singleAlbum > a > button {
     width: 100%;
     margin: auto;
+}
+
+.singleAlbum:hover {
+    background: #d4d8d9;
+    border-radius: 12px;
 }

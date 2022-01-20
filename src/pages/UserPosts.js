@@ -15,9 +15,7 @@ export const UserPosts = () => {
 
     return (
         <>
-            {
-                userPosts && userPosts.map(post => <SingleUserPost key={post.id} post={post}/>)
-            }
+            { userPosts && userPosts.map(post => <SingleUserPost key={post.id} post={post}/>) }
         </>
     )
 };

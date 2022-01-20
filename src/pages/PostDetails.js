@@ -21,7 +21,5 @@ export const PostDetails = () => {
                 <Outlet/>
             </div>
         </>
-
-
     );
 };
