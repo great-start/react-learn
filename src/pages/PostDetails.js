@@ -16,6 +16,7 @@ export const PostDetails = () => {
                 <p><b>Body: </b>{body}</p>
                 <Link to={'comments'} state={{...state}}><button>Comments</button></Link>
             </div>
+            <hr/>
             <div>
                 <Outlet/>
             </div>

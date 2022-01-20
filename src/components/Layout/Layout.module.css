@@ -4,7 +4,7 @@ body {
 
 .wrap {
     height: 100px;
-    background: brown;
+    background: #cc7e7e;
     display: flex;
 }
 
