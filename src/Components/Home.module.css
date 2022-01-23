@@ -1,0 +1,24 @@
+.buttContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 30px;
+}
+
+.buttContainer button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    background: #cbcbcb;
+
+}
+
+.buttContainer a {
+    text-decoration: none;
+
+}
+
+.buttContainer button:active {
+    background: #abaaaa;
+}
