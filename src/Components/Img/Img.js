@@ -9,7 +9,7 @@ const Img = () => {
     const [photo] = useOutletContext();
     const [updateImg, setUpdateImg] = useState(null);
 
-    const url = `${baseURL}/${photo}?${new Date()}`;
+    const url = `${baseURL}/${photo}?${new Date().getMilliseconds()}`;
 
     useEffect(() => { }, [updateImg]);
 
