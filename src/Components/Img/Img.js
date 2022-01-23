@@ -6,10 +6,10 @@ import css from "./Img.module.css"
 
 const Img = () => {
 
-    const [photo] = useOutletContext();
+    const [img] = useOutletContext();
     const [updateImg, setUpdateImg] = useState(null);
 
-    const url = `${baseURL}/${photo}?${new Date().getMilliseconds()}`;
+    const url = `${baseURL}/${img}?${new Date().getMilliseconds()}`;
 
     useEffect(() => { }, [updateImg]);
 
@@ -19,7 +19,7 @@ const Img = () => {
 
     return (
         <div className={css.update}>
-            <img src={url} alt={photo}/>
+            <img src={url} alt={img}/>
             <button onClick={handler}>UPDATE</button>
         </div>
     );
