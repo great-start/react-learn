@@ -23,8 +23,3 @@
     border-radius: 10px;
     color: white;
 }
-
-.buttContainer a button[class='active']  {
-    color: brown;
-    background: rebeccapurple;
-}

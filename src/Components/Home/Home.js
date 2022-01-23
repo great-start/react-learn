@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link, NavLink, Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 import css from "./Home.module.css"
 
@@ -14,24 +14,24 @@ const Home = () => {
     return (
         <>
             <div className={css.buttContainer}>
-                <NavLink to={'girls'}>
+                <Link to={'girls'}>
                     <button onClick={handler} name={'girls'}>Girls</button>
-                </NavLink>
-                <NavLink to={'cats'}>
+                </Link>
+                <Link to={'cats'}>
                     <button onClick={handler} name={'cats'}>Cats</button>
-                </NavLink>
-                <NavLink to={'mountains'}>
+                </Link>
+                <Link to={'mountains'}>
                     <button onClick={handler} name={'mountains'}>Mountains</button>
-                </NavLink>
-                <NavLink to={'flowers'}>
+                </Link>
+                <Link to={'flowers'}>
                     <button onClick={handler} name={'flowers'}>Flowers</button>
-                </NavLink>
-                <NavLink to={'food'}>
+                </Link>
+                <Link to={'food'}>
                     <button onClick={handler} name={'food'}>Food</button>
-                </NavLink>
+                </Link>
             </div>
             <div>
-                <Outlet context={[context, setContext]}/>
+                <Outlet context={[context]}/>
             </div>
         </>
     );
