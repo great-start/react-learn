@@ -4,7 +4,7 @@ import {episodeService} from "../../services/episode.services";
 import css from "./Episode.module.css"
 import {Episode} from "./Episode";
 
-const Episodes = () => {
+export const Episodes = () => {
 
     const [episode, setEpisode] = useState(null);
     const [page, setPage] = useState(1);
@@ -35,5 +35,3 @@ const Episodes = () => {
 
     );
 };
-
-export {Episodes};

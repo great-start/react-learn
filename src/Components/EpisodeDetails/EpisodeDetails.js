@@ -4,7 +4,7 @@ import {useLocation} from "react-router-dom";
 import css from "../Character/Character.module.css"
 import {Character} from "../Character/Character";
 
-const EpisodeDetails = () => {
+export const EpisodeDetails = () => {
 
     const {state: {name, air_date, characters}} = useLocation();
 
@@ -23,4 +23,3 @@ const EpisodeDetails = () => {
     );
 };
 
-export {EpisodeDetails};

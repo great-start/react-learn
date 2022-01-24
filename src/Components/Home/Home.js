@@ -3,7 +3,7 @@ import {Link, Outlet} from "react-router-dom";
 
 import css from "./Home.module.css"
 
-const Home = () => {
+export const Home = () => {
 
     return (
         <>
@@ -18,5 +18,3 @@ const Home = () => {
         </>
     );
 };
-
-export {Home};

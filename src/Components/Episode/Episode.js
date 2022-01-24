@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import css from "./Episode.module.css";
 
-const Episode = ({episodeOne}) => {
+export const Episode = ({episodeOne}) => {
 
      const {id, name, air_date, episode} = episodeOne;
 
@@ -16,5 +16,3 @@ const Episode = ({episodeOne}) => {
         </div>
     );
 };
-
-export {Episode};

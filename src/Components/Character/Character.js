@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import css from "./Character.module.css"
 
-const Character = ({character}) => {
+export const Character = ({character}) => {
 
     const [characters, setCharacter] = useState(null);
 
@@ -28,5 +28,3 @@ const Character = ({character}) => {
         </>
     );
 };
-
-export {Character};
