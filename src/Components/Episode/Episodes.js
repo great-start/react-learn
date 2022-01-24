@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {useEffect} from "react";
 
 import {episodeService} from "../../services/episode.services";
-import Episode from "./Episode";
 import css from "./Episode.module.css"
+import {Episode} from "./Episode";
 
 const Episodes = () => {
 

@@ -1,13 +1,12 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 
-import Character from "../Character/Character";
 import css from "../Character/Character.module.css"
+import {Character} from "../Character/Character";
 
 const EpisodeDetails = () => {
 
     const {state: {name, air_date, characters}} = useLocation();
-    console.log(characters);
 
     return (
         <>

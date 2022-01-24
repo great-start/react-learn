@@ -2,9 +2,7 @@ import React from "react";
 import {Routes, Route} from "react-router-dom";
 
 import './App.css';
-import Home from "./Components/Home/Home";
-import Episodes from "./Components/Episode/Episodes";
-import EpisodeDetails from "./Components/EpisodeDetails/EpisodeDetails";
+import {EpisodeDetails, Episodes, Home} from "./Components";
 
 function App() {
     return (
