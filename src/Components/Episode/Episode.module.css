@@ -1,17 +1,72 @@
 .episodes {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
-    gap: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    gap: 10px;
     justify-content: center;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+    column-gap: 10px;
+}
+
+.buttons button {
+    font-size: 20px;
+    color: #1f5a83;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background: #969696;
+    border: none;
+}
+
+.buttons button:hover {
+    background-color: #b6d6ff;
+}
+
+.buttons button[disabled] {
+    background: white;
+}
+.buttons button[disabled]:hover {
+    background-color: white;
 }
 
 .episode {
     width: 25%;
-    border: 1px solid grey;
+    background: rgba(227, 227, 227, 0.54);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    transition: all 500ms ease;
+    font-size: 14px;
 }
+
+.episode:hover {
+    background: #c7c7c7;
+}
+
+.episode h3 {
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #1f5a83;
+}
+
+.episode a{
+    display: block;
+    margin-top: auto;
+    text-decoration: none;
+    color: #1f5a83;
+    align-self: flex-start;
+    transition: all 500ms ease;
+}
+
+.episode a:hover {
+    color: white;
+}
+

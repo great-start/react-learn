@@ -1,5 +1,29 @@
-.top {
+.header {
     width: 100%;
     background: #98deff;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+.header a {
+    display: block;
+    margin: auto 0;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 500ms ease;
+    color: #1f5a83;
+}
+
+.header a:hover {
+    color: white;
+    font-size: 22px
+}
+
+.footer {
+    background: #1f5a83;
     height: 50px;
+    margin-top: auto;
+    align-self: flex-end;
 }

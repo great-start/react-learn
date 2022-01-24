@@ -1,6 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
 #root {
     column-gap: 10px;
     row-gap: 10px;
+    font-family: "DejaVu Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 

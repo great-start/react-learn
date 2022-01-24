@@ -8,13 +8,11 @@ import css from "./Episode.module.css"
 const Episodes = () => {
 
     const [episode, setEpisode] = useState(null);
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         episodeService.get(page).then(value => setEpisode(value.results));
     }, [page])
-
-    console.log(episode);
 
     function previous() {
         setPage(page - 1);
@@ -27,7 +25,7 @@ const Episodes = () => {
     return (
         <>
             <div className={css.episodes}>
-                {episode && episode.map(episode => <Episode key={episode.id} episode={episode}/>)}
+                {episode && episode.map(episode => <Episode key={episode.id} episodeOne={episode}/>)}
             </div>
             <div className={css.buttons}>
                 <button onClick={previous} disabled={page===1}>Previous</button>
@@ -39,4 +37,4 @@ const Episodes = () => {
     );
 };
 
-export default Episodes;
+export {Episodes};
