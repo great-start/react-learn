@@ -1,7 +1,7 @@
 import React from 'react';
-
-import css from "./Episode.module.css"
 import {Link} from "react-router-dom";
+
+import css from "./Episode.module.css";
 
 const Episode = ({episodeOne}) => {
 
