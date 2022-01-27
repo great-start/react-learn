@@ -1,0 +1,42 @@
+.form1 {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #b78a8a;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #b78a8a;
+}
+
+.form1 :nth-child(3) {
+    margin-right: 10px;
+}
+
+.reset {
+    margin-top: 5px;
+}
+
+.reset > button {
+    margin-right: 10px;
+}
+
+.form2 {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #82c082;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #82c082;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.form3 {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #7bbafa;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #7bbafa;
+}

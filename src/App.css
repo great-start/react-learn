@@ -1,6 +1,9 @@
 #root {
-    column-gap: 10px;
-    row-gap: 10px;
+    display: flex;
+    gap: 50px;
+    padding: 20px;
 }
 
-
+#root div {
+    box-sizing: border-box;
+}
