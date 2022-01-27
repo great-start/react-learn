@@ -31,4 +31,4 @@ const Form3 = () => {
     );
 }
 
-export default Form3;
+export {Form3};

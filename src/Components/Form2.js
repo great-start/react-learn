@@ -43,4 +43,4 @@ const Form2 = () => {
     );
 };
 
-export default Form2;
+export {Form2};
