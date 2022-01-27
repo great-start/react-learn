@@ -15,17 +15,22 @@ const Form = () => {
 
     const [data, dispatch] = useReducer(reducer, {cat:'', dog: ''});
 
+    const handler = (e) => {
+        e.preventDefault();
+        console.log(e.target.value);
+        console.log(data);
+        return {...data, [e.target.name]: e.target.value}
+    }
+
     return (
         <div>
             <form>
-                <div>
-                    <label>Add Cat: <input type="text"/></label>
-                    <button onClick={() => dispatch({type: 'cat'})}>SAVE</button>
-                </div>
-                <div>
-                    <label>Add Dog: <input type="text"/></label>
-                    <button onClick={() => dispatch({type: 'dog'})}>SAVE</button>
-                </div>
+                <label>Add Cat: <input type="text" value={''} name={'cat'} onChange={handler}/></label>
+                <button onSubmit={() => dispatch({type: 'cat'})}>SAVE</button>
+            </form>
+            <form>
+                <label>Add Dog: <input type="text" value={''} name={'dog'} onChange={handler}/></label>
+                <button onSubmit={() => dispatch({type: 'dog'})}>SAVE</button>
             </form>
             <hr/>
             <div>{data.cat && data.dog}</div>
