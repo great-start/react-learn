@@ -1,0 +1,42 @@
+
+.cats {
+    width: 300px;
+    padding: 10px;
+}
+
+.dogs {
+    width: 300px;
+    padding: 10px;
+ }
+
+.cat {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #c7e5ff;
+    transition: all 500ms ease;
+    color: #000056;
+}
+
+
+.cat:hover, .dog:hover {
+    background: #cbcbcb;
+}
+
+.dog {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #e9ffea;
+    transition: all 500ms ease;
+    color: #000056;
+}
+
+.butt {
+    display: flex;
+    font-size: 16px;
+    width: 80px;
+    height: 25px;
+    color: #3f0000;
+    margin: 10px 0 auto;
+}

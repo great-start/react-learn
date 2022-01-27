@@ -1,59 +1,76 @@
 import React, {useReducer} from 'react';
 
-import Cats from "../Cats";
+import css from './Forms.module.css';
+import {Cats} from "../Cats&Dogs/Cats";
+import {Dogs} from "../Cats&Dogs/Dogs";
 
 const reducer = (data, action) => {
 
-    data = {...data, cats: [...data.cats], dogs: [data.dogs]};
+    data = {...data, cats: [...data.cats], dogs: [...data.dogs]};
 
     switch (action.type) {
         case 'cat': {
             data.cats.push(action.value);
-            console.log(data.cats);
             return data;
         }
-        // case 'dog': {
-        //     data.dogs.push(action.value);
-        //     return {...data};
-        // }
+        case 'deleteCat': {
+            data.cats.splice(action.value, 1);
+            return data;
+        }
+        case 'dog': {
+            data.dogs.push(action.value);
+            return data;
+        }
+        case 'deleteDog': {
+            data.dogs.splice(action.value, 1);
+            return data;
+        }
         default:
             throw new Error('error');
     }
 }
 
-const Form = () => {
+export const Form = () => {
 
     const [data, dispatch] = useReducer(reducer, {cats: [], dogs: []});
 
-    console.log(data);
-
-    const handlerOne = (e) => {
-        console.log(data);
+    const createCat = (e) => {
         e.preventDefault();
-        dispatch({type: 'cat', value: e.target.cat.value})
+        dispatch({type: 'cat', value: e.target.cat.value});
+        e.target.cat.value = '';
     }
 
-    const delete = (e) => {
+    const createDog = (e) => {
         e.preventDefault();
-        dispatch({type: 'dog', value: e.target.dog.value})
+        dispatch({type: 'dog', value: e.target.dog.value});
+        e.target.dog.value = '';
     }
 
-    console.log(data.cats);
+    const deleteCat = (index) => {
+        dispatch({type: 'deleteCat', value: index})
+    }
+
+    const deleteDog = (index) => {
+        dispatch({type: 'deleteDog', value: index})
+    }
 
     return (
         <div>
-            <form onSubmit={handlerOne}>
-                <label>Add Cat: <input type="text" name={'cat'}/></label>
-                <button>SAVE</button>
-            </form>
-            {/*<form onSubmit={handlerTwo}>*/}
-            {/*    <label>Add Dog: <input type="text" name={'dog'}/></label>*/}
-            {/*    <button>SAVE</button>*/}
-            {/*</form>*/}
+            <div className={css.forms}>
+                <form onSubmit={createCat}>
+                    <label>Add Cat: <input type="text" name={'cat'}/></label>
+                    <button className={css.b}>SAVE</button>
+                </form>
+                <form onSubmit={createDog}>
+                    <label>Add Dog: <input type="text" name={'dog'}/></label>
+                    <button className={css.b}>SAVE</button>
+                </form>
+            </div>
             <hr/>
-            <Cats cats={data.cats} delete={delete}/>
+            <div className={css.box}>
+                <Cats cats={data.cats} deleteCat={deleteCat}/>
+                <Dogs dogs={data.dogs} deleteDog={deleteDog}/>
+            </div>
         </div>
     );
 };
-
-export default Form;

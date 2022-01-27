@@ -1,0 +1,18 @@
+.forms {
+    display: flex;
+    column-gap: 50px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 200px;
+}
+
+.b {
+    font-size: 14px;
+    color: #3f0000;
+    margin: 10px 10px auto;
+}
