@@ -34,16 +34,10 @@ export const Form = () => {
 
     const [data, dispatch] = useReducer(reducer, {cats: [], dogs: []});
 
-    const createCat = (e) => {
+    const create = (e) => {
         e.preventDefault();
-        dispatch({type: 'cat', value: e.target.cat.value});
-        e.target.cat.value = '';
-    }
-
-    const createDog = (e) => {
-        e.preventDefault();
-        dispatch({type: 'dog', value: e.target.dog.value});
-        e.target.dog.value = '';
+        dispatch({type: e.target[0].name, value: e.target[0].value});
+        e.target[0].value = '';
     }
 
     const deleteCat = (index) => {
@@ -57,11 +51,11 @@ export const Form = () => {
     return (
         <div>
             <div className={css.forms}>
-                <form onSubmit={createCat}>
+                <form onSubmit={create}>
                     <label>Add Cat: <input type="text" name={'cat'}/></label>
                     <button className={css.b}>SAVE</button>
                 </form>
-                <form onSubmit={createDog}>
+                <form onSubmit={create}>
                     <label>Add Dog: <input type="text" name={'dog'}/></label>
                     <button className={css.b}>SAVE</button>
                 </form>
