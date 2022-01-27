@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
+import Cat from "./Cat";
+
 const Cats = ({cats}) => {
 
     console.log(cats);
@@ -8,7 +10,7 @@ const Cats = ({cats}) => {
 
     return (
         <div>
-            {cats.map(cat => <div>{cat}</div>)}
+            {cats.map((cat,index) => <Cat key={index} cat={cat} index={index}/>)}
         </div>
     );
 };

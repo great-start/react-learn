@@ -1,32 +1,29 @@
-import React, {useReducer, useEffect} from 'react';
+import React, {useReducer} from 'react';
 
 import Cats from "../Cats";
 
+const reducer = (data, action) => {
 
+    data = {...data, cats: [...data.cats], dogs: [data.dogs]};
+
+    switch (action.type) {
+        case 'cat': {
+            data.cats.push(action.value);
+            console.log(data.cats);
+            return data;
+        }
+        // case 'dog': {
+        //     data.dogs.push(action.value);
+        //     return {...data};
+        // }
+        default:
+            throw new Error('error');
+    }
+}
 
 const Form = () => {
 
-    const reducer = (data, action) => {
-        // data = {...data};
-        switch (action.type) {
-
-            case 'cat': {
-                data.cats.push(action.value);
-                console.log(data.cats);
-                return data;
-            }
-            // case 'dog': {
-            //     data.dogs.push(action.value);
-            //     return {...data};
-            // }
-            default:
-                throw new Error('error');
-        }
-    }
-
     const [data, dispatch] = useReducer(reducer, {cats: [], dogs: []});
-
-    useEffect(() => {}, [data.cats.length]);
 
     console.log(data);
 
@@ -54,7 +51,7 @@ const Form = () => {
             {/*    <button>SAVE</button>*/}
             {/*</form>*/}
             <hr/>
-            {/*<Cats cats={data.cats}/>*/}
+            <Cats cats={data.cats}/>
         </div>
     );
 };
