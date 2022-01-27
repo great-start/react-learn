@@ -33,10 +33,10 @@ const Form = () => {
         dispatch({type: 'cat', value: e.target.cat.value})
     }
 
-    // const handlerTwo = (e) => {
-    //     e.preventDefault();
-    //     dispatch({type: 'dog', value: e.target.dog.value})
-    // }
+    const delete = (e) => {
+        e.preventDefault();
+        dispatch({type: 'dog', value: e.target.dog.value})
+    }
 
     console.log(data.cats);
 
@@ -51,7 +51,7 @@ const Form = () => {
             {/*    <button>SAVE</button>*/}
             {/*</form>*/}
             <hr/>
-            <Cats cats={data.cats}/>
+            <Cats cats={data.cats} delete={delete}/>
         </div>
     );
 };
