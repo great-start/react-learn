@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 const Cats = ({cats}) => {
 
     console.log(cats);
+
+    if (cats.length === 0) return null;
 
     return (
         <div>
