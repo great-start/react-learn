@@ -17,19 +17,20 @@ const Form = () => {
 
     const handler = (e) => {
         e.preventDefault();
-        dispatch({type: 'cat', value: e.target.cat.value})
-        console.log({type: 'cat', value: e.target.cat.value});
+        console.log(e);
+        // dispatch({type: e.target.name, value: e.target.name.value})
+        console.log({type: e.target.name, value: e.target.name.value});
     }
 
     return (
         <div>
-            <form>
+            <form onSubmit={handler}>
                 <label>Add Cat: <input type="text" name={'cat'}/></label>
-                <button onSubmit={(E) => E.preventDefault()}>SAVE</button>
+                <button>SAVE</button>
             </form>
-            <form>
+            <form onSubmit={handler}>
                 <label>Add Dog: <input type="text" name={'dog'}/></label>
-                <button onSubmit={() => dispatch({type: 'dog'})}>SAVE</button>
+                <button>SAVE</button>
             </form>
             <hr/>
             <div>{data.cat && data.cat}</div>
