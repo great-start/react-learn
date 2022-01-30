@@ -41,10 +41,10 @@ export const deleteCarFromDB = createAsyncThunk(
 
 export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
-    async ({data}) => {
+    async ({data},{dispatch}) => {
         try {
-
-            await carService.updateById(data.id, {data});
+            await carService.updateById(data.id, data);
+            dispatch(resetForm());
         } catch (e) {
             console.log(e);
         }
@@ -58,7 +58,7 @@ const carSlice = createSlice({
         cars:[],
         status: null,
         error: null,
-        updateForm: {exist: false, carId: null}
+        updateForm: {exist: null, carId: null}
     },
     reducers: {
         addCar: (state, action) => {
@@ -73,7 +73,11 @@ const carSlice = createSlice({
         updateThisCar: (state, action) => {
             state.updateForm.exist = true;
             state.updateForm.carId = action.payload.id;
-        }
+        },
+        resetForm: (state) => {
+            state.updateForm.exist = null;
+            state.updateForm.carId = null;
+        },
     },
     extraReducers: {
         [getAllCars.pending]: (state, action) => {
@@ -93,7 +97,7 @@ const carSlice = createSlice({
 
 });
 
-export const {addCar, deleteCar, updateThisCar} = carSlice.actions;
+export const {addCar, deleteCar, updateThisCar, resetForm} = carSlice.actions;
 
 const carReducer = carSlice.reducer;
 export default carReducer;

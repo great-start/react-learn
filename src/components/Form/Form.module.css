@@ -1,3 +1,11 @@
 .update {
     background: lightblue;
+    transition: all 2000ms ease;
+    height: 60px;
+}
+.send {
+    background: #ececec;
+    transition: all 2000ms ease;
+    height: 60px;
+
 }
