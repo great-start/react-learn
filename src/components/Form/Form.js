@@ -9,10 +9,11 @@ export const Form = () => {
 
     const {handleSubmit, register, reset} = useForm();
     const dispatch = useDispatch();
-    const {updateForm : {exist, carId: id}} = useSelector(state => state.carReducer);
+    const {updateForm : {exist, carId}} = useSelector(state => state.carReducer);
 
     const handler = (data) => {
         if (exist.toString() === 'true') {
+            const id = String(carId);
             data = {id, ...data};
             return dispatch(updateCar({data}));
         }
@@ -28,7 +29,7 @@ export const Form = () => {
                 <label>Price: <input type="text" {...register('price')}/></label>
                 <label>Year: <input type="text" {...register('year')}/></label>
                 <button>{exist.toString() === 'true' ? 'UPDATE' : 'SEND' }</button>
-                {exist.toString() === 'true' && (<p>Ready to update car with Id: {id}</p>)}
+                {exist.toString() === 'true' && (<p>Ready to update car with Id: {carId}</p>)}
             </form>
         </div>
     );

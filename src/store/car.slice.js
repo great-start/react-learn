@@ -43,13 +43,13 @@ export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
     async ({data}) => {
         try {
-            console.log(data.id, data);
-            await carService.updateById(data.id,{data});
+
+            await carService.updateById(data.id, {data});
         } catch (e) {
             console.log(e);
         }
     }
-)
+);
 
 
 const carSlice = createSlice({
