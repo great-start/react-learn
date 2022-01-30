@@ -13,8 +13,8 @@ export const Form = () => {
     console.log(updateForm);
 
     const handler = (data) => {
-        if (updateForm.toString() === 'true') {
-            dispatch(updateCar({data}))
+        if (updateForm.exist.toString() === 'true') {
+            return dispatch(updateCar({data}));
         }
         // dispatch(addCar({data}));
         dispatch(createCar({data}));

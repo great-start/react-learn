@@ -41,9 +41,10 @@ export const deleteCarFromDB = createAsyncThunk(
 
 export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
-    async ({id},{dispatch}) => {
+    async ({data},{getState}) => {
+        const {carReducer: {updateForm: {carId}}} = getState();
         try {
-            console.log(await carService.update(id));
+            await carService.updateById(carId,{data});
         } catch (e) {
             console.log(e);
         }
