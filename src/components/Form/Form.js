@@ -9,11 +9,11 @@ export const Form = () => {
 
     const {handleSubmit, register, reset} = useForm();
     const dispatch = useDispatch();
-    const {updateForm} = useSelector(state => state.carReducer);
-    console.log(updateForm);
+    const {updateForm : {exist, carId: id}} = useSelector(state => state.carReducer);
 
     const handler = (data) => {
-        if (updateForm.exist.toString() === 'true') {
+        if (exist.toString() === 'true') {
+            data = {id, ...data};
             return dispatch(updateCar({data}));
         }
         // dispatch(addCar({data}));
@@ -23,11 +23,12 @@ export const Form = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(handler)} className={updateForm.exist.toString() === 'true' ? css.update : 'send'} >
+            <form onSubmit={handleSubmit(handler)} className={exist.toString() === 'true' ? css.update : 'send'} >
                 <label>Model: <input type="text" {...register('model')}/></label>
                 <label>Price: <input type="text" {...register('price')}/></label>
                 <label>Year: <input type="text" {...register('year')}/></label>
-                <button>{updateForm.exist.toString() === 'true' ? 'UPDATE' : 'SEND' }</button>
+                <button>{exist.toString() === 'true' ? 'UPDATE' : 'SEND' }</button>
+                {exist.toString() === 'true' && (<p>Ready to update car with Id: {id}</p>)}
             </form>
         </div>
     );
