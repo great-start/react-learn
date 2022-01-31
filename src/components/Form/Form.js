@@ -9,7 +9,7 @@ import {carValidation} from "../../validation/car.validation";
 
 export const Form = () => {
 
-    const {handleSubmit, register, reset} = useForm({resolver: joiResolver(carValidation), mode: 'onTouched'});
+    const {handleSubmit, register, reset, formState:{errors}} = useForm({resolver: joiResolver(carValidation), mode: 'onTouched'});
     const dispatch = useDispatch();
     const {updateForm : {exist, carId, message}} = useSelector(state => state.carReducer);
 
@@ -32,12 +32,15 @@ export const Form = () => {
                 <div>
                     <div>
                         <label>Model: <input type="text" {...register('model')}/></label>
+                        <p className={css.error}>{errors.model && <span>{errors.model.message}</span>}</p>
                     </div>
                     <div>
                         <label>Price: <input type="text" {...register('price')}/></label>
+                        <p className={css.error}>{errors.price && <span>{errors.price.message}</span>}</p>
                     </div>
                     <div>
                         <label>Year: <input type="text" {...register('year')}/></label>
+                        <p className={css.error}>{errors.year && <span>{errors.year.message}</span>}</p>
                     </div>
                     <button>{exist ? 'UPDATE' : 'CREATE'}</button>
                 </div>

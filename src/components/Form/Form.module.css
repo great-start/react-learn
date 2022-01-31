@@ -4,7 +4,7 @@
     background: lightskyblue;
     font-size: 20px;
     transition: all 1500ms ease;
-    height: 80px;
+    height: 100px;
     width: 1000px;
     margin-bottom: 20px;
 }
@@ -45,4 +45,13 @@
 
 .update > div > button:hover {
     background: #29baff;
+}
+
+.error {
+    display: block;
+    height: 20px;
+    margin: 0 0 0 50px;
+    color: red;
+    font-size: 16px;
+    transition: all 1500ms ease;
 }
