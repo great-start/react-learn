@@ -8,7 +8,7 @@ import {createCar, updateCar} from "../../store";
 
 export const Form = () => {
 
-    const {handleSubmit, register, reset} = useForm({resolver(carValidation), mode: 'onTouched'});
+    const {handleSubmit, register, reset} = useForm({resolver(carValidatior), mode: 'onTouched'});
     const dispatch = useDispatch();
     const {updateForm : {exist, carId, message}} = useSelector(state => state.carReducer);
 
