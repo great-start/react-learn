@@ -25,7 +25,7 @@ export const Form = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(handler)} className={exist ? css.update : css.send} >
+            <form onSubmit={handleSubmit(handler)} className={exist ? css.update : css.send}>
                 <label>Model: <input type="text" {...register('model')}/></label>
                 <label>Price: <input type="text" {...register('price')}/></label>
                 <label>Year: <input type="text" {...register('year')}/></label>
