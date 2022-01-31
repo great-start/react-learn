@@ -1,11 +1,9 @@
 import React from 'react';
-import {NavLink, Outlet, useNavigate} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 
 import css from "./Layout.module.css"
 
 export const Layout = () => {
-
-    const navigate = useNavigate();
 
     return (
         <>
@@ -13,6 +11,8 @@ export const Layout = () => {
                 <nav>
                     <NavLink to={'/users'}>Users</NavLink>
                     <NavLink to={'/posts'}>Posts</NavLink>
+                    <NavLink to={'/comments'}>Posts</NavLink>
+                    <NavLink to={'/cars'}>Posts</NavLink>
                 </nav>
             </div>
             <div className={css.mainContent}>

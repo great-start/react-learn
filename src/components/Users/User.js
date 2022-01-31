@@ -11,7 +11,6 @@ export const User = ({user}) => {
             <div className={css.user}>
                 <h4>{id} -- {name}</h4>
                 <Link to={id.toString()} state={{...user}}><button>Details</button></Link>
-                <Link to={`${id.toString()}/albums`} state={{...user}}><button>Albums</button></Link>
             </div>
     );
 };

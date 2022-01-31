@@ -1,18 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {User} from "./User";
-import {userServices} from "../../services";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllUsers} from "../../store/users.store";
 
 export const Users = () => {
 
-    const [users, setUsers] = useState(null);
+    const dispatch = useDispatch();
+    const {users} = useSelector(state => state.usersStore);
+
+    console.log(users);
 
     useEffect(() => {
-        userServices.getAll().then(response => setUsers(response));
+        dispatch(getAllUsers);
     }, []);
-
-    if (!users) { return null }
 
     return (
         <>
