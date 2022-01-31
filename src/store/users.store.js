@@ -4,12 +4,12 @@ import {userService} from "../services";
 
 export const getAllUsers = createAsyncThunk(
     'usersStore/getAllUsers',
-    async () => {
+    async (_,{rejectWithValue}) => {
         try {
             const users = await userService.getAll();
             console.log(users);
         } catch (e) {
-            console.log(e);
+            return rejectWithValue(e.message);
         }
     }
 );
@@ -27,8 +27,8 @@ const userStore = createSlice({
 
 })
 
-const usersStore = userStore.reducer;
+const usersReducer = userStore.reducer;
 
 export const {getAll} = userStore.actions;
 
-export default usersStore;
+export default usersReducer;
