@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import {Comment} from "./Comment";
-import {commentsService} from "../../services/comments.service";
+import {commentsService} from "../../services";
 
 export const Comments = () => {
 

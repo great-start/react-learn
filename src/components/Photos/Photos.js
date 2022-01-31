@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
-import {photosService} from "../../services/albumPhotos.service";
 import {Photo} from "./Photo";
+import {photosService} from "../../services";
 
 export const Photos = () => {
 

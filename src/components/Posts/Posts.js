@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Outlet} from "react-router-dom";
 
-import {postsService} from "../../services/posts.service";
 import {Post} from "./Post";
-
 import css from './Posts.module.css'
+import {postsService} from "../../services";
 
 export const Posts = () => {
 

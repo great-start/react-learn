@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 
-import {userServices} from "../../services/user.services";
 import {Album} from "./Album";
+import {userServices} from "../../services";
 
 export const Albums = () => {
 

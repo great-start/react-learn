@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, useLocation, Outlet, useParams} from "react-router-dom";
 
 import css from './pages.module.css';
-import {postsService} from "../services/posts.service";
+import {postsService} from "../services";
 
 export const PostDetails = () => {
 

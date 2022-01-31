@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {User} from "./User";
-import {userServices} from "../../services/user.services";
+import {userServices} from "../../services";
 
 export const Users = () => {
 

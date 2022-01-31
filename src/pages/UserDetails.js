@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 
 import css from './pages.module.css'
-import {userServices} from "../services/user.services";
+import {userServices} from "../services";
 
 export const UserDetails = () => {
 
