@@ -8,7 +8,7 @@ import {getAllUsers} from "../../store/users.store";
 export const Users = () => {
 
     const dispatch = useDispatch();
-    const {users} = useSelector(state => state.usersStore);
+    const {users} = useSelector(state => state.usersReducer);
 
     console.log(users);
 

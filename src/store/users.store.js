@@ -14,21 +14,18 @@ export const getAllUsers = createAsyncThunk(
     }
 );
 
-const userStore = createSlice({
+const usersStore = createSlice({
     name: 'usersStore',
     initialState: {
         users: []
     },
     reducers: {
-        getAll: (state,action) => {
 
-        }
-    },
-
+    }
 })
 
-const usersReducer = userStore.reducer;
+const usersReducer = usersStore.reducer;
 
-export const {getAll} = userStore.actions;
+export const {getAll} = usersStore.actions;
 
 export default usersReducer;
