@@ -1,0 +1,16 @@
+.post {
+    border-radius: 5px;
+    background: #b3bbc0;
+    padding: 2px;
+    margin: 5px;
+    transition: all 500ms ease;
+}
+
+.post:hover {
+    background: #d4d8d9;
+    border-radius: 20px;
+}
+
+.posts {
+    padding: 10px;
+}
