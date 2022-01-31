@@ -7,7 +7,7 @@ import {createCar, updateCar} from "../../store";
 
 export const Form = () => {
 
-    const {handleSubmit, register, reset} = useForm();
+    const {handleSubmit, register, reset} = useForm({resolver()});
     const dispatch = useDispatch();
     const {updateForm : {exist, carId, message}} = useSelector(state => state.carReducer);
 
