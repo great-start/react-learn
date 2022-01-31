@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import {Car} from "../Car/Car";
 import {getAllCars} from "../../store";
+import css from './Cars.module.css';
 
 export const Cars = () => {
 
@@ -14,7 +15,7 @@ export const Cars = () => {
     },[])
 
     return (
-        <div>
+        <div className={css.cars}>
             {status === 'pending' && <h2>loading......</h2>}
             {status === 'rejected' && <h2>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}

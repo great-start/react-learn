@@ -1,19 +1,19 @@
-.update, .send {
+.update, .create {
     display: flex;
     flex-direction: column;
     background: lightskyblue;
     font-size: 20px;
-    transition: all 2000ms ease;
+    transition: all 1500ms ease;
     height: 80px;
     width: 1000px;
     margin-bottom: 20px;
 }
 
-.send {
+.create {
     background: #eeeeee;
 }
 
-.update > div, .send > div {
+.update > div, .create > div {
     display: flex;
     gap: 20px;
     margin: 10px auto auto;
@@ -26,7 +26,7 @@
     justify-self: flex-end;
 }
 
-.update > div > button, .send > div > button {
+.update > div > button, .create > div > button {
     margin: auto;
     font-size: 16px;
     height: 26px;
@@ -35,11 +35,11 @@
     width: 100px;
 }
 
-.send > div > button {
+.create > div > button {
     border: 2px solid #8f8f8f;
 }
 
-.send > div > button:hover {
+.create > div > button:hover {
     background: #8f8f8f;
 }
 

@@ -9,7 +9,7 @@ export const Form = () => {
 
     const {handleSubmit, register, reset} = useForm();
     const dispatch = useDispatch();
-    const {updateForm : {exist, carId}} = useSelector(state => state.carReducer);
+    const {updateForm : {exist, carId, message}} = useSelector(state => state.carReducer);
 
     const handler = (data) => {
         if (exist.toString() === 'true') {
@@ -26,7 +26,7 @@ export const Form = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(handler)} className={exist ? css.update : css.send}>
+            <form onSubmit={handleSubmit(handler)} className={exist ? css.update : css.create}>
                 <div>
                     <div>
                         <label>Model: <input type="text" {...register('model')}/></label>
@@ -37,10 +37,11 @@ export const Form = () => {
                     <div>
                         <label>Year: <input type="text" {...register('year')}/></label>
                     </div>
-                    <button>{exist ? 'UPDATE' : 'SEND'}</button>
+                    <button>{exist ? 'UPDATE' : 'CREATE'}</button>
                 </div>
                 <div>
                     {exist && (<p className={css.hide}>Ready to update car with Id: {carId}</p>)}
+                    {message && (<p className={css.hide}>{message}</p>)}
                 </div>
             </form>
         </div>
