@@ -1,13 +1,14 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
+import {joiResolver} from "@hookform/resolvers/joi";
 
 import css from './Form.module.css';
 import {createCar, updateCar} from "../../store";
 
 export const Form = () => {
 
-    const {handleSubmit, register, reset} = useForm({resolver()});
+    const {handleSubmit, register, reset} = useForm({resolver(carValidation), mode: 'onTouched'});
     const dispatch = useDispatch();
     const {updateForm : {exist, carId, message}} = useSelector(state => state.carReducer);
 
