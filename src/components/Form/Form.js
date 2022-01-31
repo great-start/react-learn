@@ -5,10 +5,11 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 import css from './Form.module.css';
 import {createCar, updateCar} from "../../store";
+import {carValidation} from "../../validation/car.validation";
 
 export const Form = () => {
 
-    const {handleSubmit, register, reset} = useForm({resolver(carValidatior), mode: 'onTouched'});
+    const {handleSubmit, register, reset} = useForm({resolver: joiResolver(carValidation), mode: 'onTouched'});
     const dispatch = useDispatch();
     const {updateForm : {exist, carId, message}} = useSelector(state => state.carReducer);
 

@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-export const CarValidator = Joi.object({
+export const carValidation = Joi.object({
     model: Joi.string().regex(new RegExp('^[a-zA-ZА-яёЁіІїЇ]{1,20}$')).required().messages({
         'string.empty' : 'Строка не може бути пуста',
         'string.pattern.base' : 'Тыльки букви мін 1 , макс 20'
