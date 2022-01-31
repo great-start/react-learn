@@ -16,7 +16,8 @@ export const Form = () => {
             const id = String(carId);
             data = {id, ...data};
             dispatch(updateCar({data}));
-            reset()
+            reset();
+            return
         }
         // dispatch(addCar({data}));
         dispatch(createCar({data}));
@@ -26,11 +27,21 @@ export const Form = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(handler)} className={exist ? css.update : css.send}>
-                <label>Model: <input type="text" {...register('model')}/></label>
-                <label>Price: <input type="text" {...register('price')}/></label>
-                <label>Year: <input type="text" {...register('year')}/></label>
-                <button>{exist ? 'UPDATE' : 'SEND' }</button>
-                {exist && (<p>Ready to update car with Id: {carId}</p>)}
+                <div>
+                    <div>
+                        <label>Model: <input type="text" {...register('model')}/></label>
+                    </div>
+                    <div>
+                        <label>Price: <input type="text" {...register('price')}/></label>
+                    </div>
+                    <div>
+                        <label>Year: <input type="text" {...register('year')}/></label>
+                    </div>
+                    <button>{exist ? 'UPDATE' : 'SEND'}</button>
+                </div>
+                <div>
+                    {exist && (<p className={css.hide}>Ready to update car with Id: {carId}</p>)}
+                </div>
             </form>
         </div>
     );

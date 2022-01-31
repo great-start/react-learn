@@ -58,7 +58,7 @@ const carSlice = createSlice({
         cars:[],
         status: null,
         error: null,
-        updateForm: {exist: null, carId: null}
+        updateForm: {exist: false, carId: null}
     },
     reducers: {
         addCar: (state, action) => {
@@ -75,7 +75,7 @@ const carSlice = createSlice({
             state.updateForm.carId = action.payload.id;
         },
         resetForm: (state) => {
-            state.updateForm.exist = null;
+            state.updateForm.exist = false;
             state.updateForm.carId = null;
         },
     },
