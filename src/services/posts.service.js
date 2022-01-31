@@ -1,7 +1,6 @@
-import {axiosService} from "./axios.services";
+import {axiosPlaceholderService} from "./axios.services";
 import {url} from "../configs";
 
 export const postsService = {
-    getAll: () => axiosService.get(url.posts).then(response => response.data),
-    getSinglePost: (id) => axiosService.get(`${url.posts}/${id}`).then(response => response.data),
+    getAll: () => axiosPlaceholderService.get(url.posts).then(response => response.data),
 }

@@ -8,8 +8,8 @@ function App() {
         <Routes>
             <Route path={'/'} element={<Layout/>}>
                 <Route path={'users'} element={<Users/>}/>
-                {/*<Route path={'posts'} element={<Posts/>}/>*/}
-                {/*<Route path={'comments'} element={<Comments/>}/>*/}
+                <Route path={'posts'} element={<Posts/>}/>
+                <Route path={'comments'} element={<Comments/>}/>
                 {/*<Route path={'cars'} element={<Cars/>}/>*/}
             </Route>
             <Route path={'*'} element={<Navigate to={'/'}/>}/>

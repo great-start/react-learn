@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import React, {useEffect} from 'react';
 
 import {Comment} from "./Comment";
-import {commentsService} from "../../services";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllComments} from "../../store";
 
 export const Comments = () => {
 
-    const {id} = useParams();
-    const [comments, setComments] = useState(null);
+    const dispatch = useDispatch();
+    const {comments} = useSelector(state => state.commentsReducer);
 
     useEffect(() => {
-        commentsService.getAllComments(id).then(value => setComments(value))
-    },[id])
+        dispatch(getAllComments());
+    },[])
 
     return (
         <div>

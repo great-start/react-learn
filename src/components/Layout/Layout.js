@@ -11,8 +11,8 @@ export const Layout = () => {
                 <nav>
                     <NavLink to={'/users'}>Users</NavLink>
                     <NavLink to={'/posts'}>Posts</NavLink>
-                    <NavLink to={'/comments'}>Posts</NavLink>
-                    <NavLink to={'/cars'}>Posts</NavLink>
+                    <NavLink to={'/comments'}>Comments</NavLink>
+                    <NavLink to={'/cars'}>Cars</NavLink>
                 </nav>
             </div>
             <div className={css.mainContent}>

@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import {Outlet} from "react-router-dom";
+import React, {useEffect} from 'react';
 
 import {Post} from "./Post";
 import css from './Posts.module.css'
-import {postsService} from "../../services";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllPosts} from "../../store/posts.store";
 
 export const Posts = () => {
 
-    const [posts, setPosts] = useState(null);
+    const dispatch = useDispatch();
+    const {posts} = useSelector(state => state.postsReducer);
 
     useEffect(() => {
-        postsService.getAll().then(posts => setPosts(posts));
+        dispatch(getAllPosts());
     }, [])
 
     return (
@@ -18,11 +19,7 @@ export const Posts = () => {
             <div className={css.posts}>
                 {posts && posts.map(post => <Post key={post.id} post={post}/>)}
             </div>
-            <div>
-                <Outlet/>
-            </div>
         </>
-
     );
 };
 
