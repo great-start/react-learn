@@ -26,8 +26,7 @@ const usersStore = createSlice({
     }
 })
 
-const usersReducer = usersStore.reducer;
+export const usersReducer = usersStore.reducer;
 
 export const {showUsers} = usersStore.actions;
 
-export default usersReducer;

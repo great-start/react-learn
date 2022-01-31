@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {useDispatch} from "react-redux";
 
-import Car from "./Car";
 import css from "./Cars.module.css";
+import {Car} from "./Car";
 
 const Cars = () => {
 

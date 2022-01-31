@@ -2,6 +2,7 @@ import React from "react";
 import {Routes, Route, Navigate} from "react-router-dom";
 
 import {Comments, Layout, Posts, Users} from "./components";
+import Cars from "./components/Cars/Cars";
 
 function App() {
     return (
@@ -10,7 +11,7 @@ function App() {
                 <Route path={'users'} element={<Users/>}/>
                 <Route path={'posts'} element={<Posts/>}/>
                 <Route path={'comments'} element={<Comments/>}/>
-                {/*<Route path={'cars'} element={<Cars/>}/>*/}
+                <Route path={'cars'} element={<Cars/>}/>
             </Route>
             <Route path={'*'} element={<Navigate to={'/'}/>}/>
         </Routes>

@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Car = () => {
+
+export const Car = ({car: {id, model, price, year}}) => {
+
     return (
-        <div>
-            
+        <div className={css.car}>
+            <div>
+                <div><b>Model:</b> {model}</div>
+                <div><b>Price:</b> {price}</div>
+                <div><b>Year:</b> {year}</div>
+            </div>
         </div>
     );
 };
-
-export default Car;

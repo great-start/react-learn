@@ -26,7 +26,6 @@ const postsStore = createSlice({
     }
 })
 
-const postsReducer = postsStore.reducer;
+export const postsReducer = postsStore.reducer;
 
 export const {showPosts} = postsStore.actions;
-export default postsReducer;

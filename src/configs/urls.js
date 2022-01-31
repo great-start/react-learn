@@ -6,5 +6,5 @@ export const baseURL = {
 export const url = {
     users: '/users',
     posts: '/posts',
-    comments: '/comments'
+    comments: '/comments',
 }
