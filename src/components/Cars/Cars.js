@@ -1,20 +1,23 @@
 import React, {useEffect} from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import css from "./Cars.module.css";
 import {Car} from "./Car";
+import {getCars} from "../../store";
 
 const Cars = () => {
 
     const dispatch = useDispatch();
-    // const {cars} = useSelector(state => state.);
+    const {cars} = useSelector(state => state.carsReducer);
+
+    console.log(cars);
 
     useEffect(() => {
-        dispatch();
+        dispatch(getCars());
     },[])
 
     return (
-        <div>
+        <div className={}>
             {cars && cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );

@@ -5,8 +5,6 @@ import {postsReducer} from "./posts.store";
 import {commentsReducer} from "./comments.store";
 import {carsReducer} from "./car.store";
 
-
-
 export const store = configureStore({
     reducer: {
         usersReducer,

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import css from './Cars.module.css';
 
 export const Car = ({car: {id, model, price, year}}) => {
 
