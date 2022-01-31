@@ -8,16 +8,19 @@ import {getAllPosts} from "../../store";
 export const Posts = () => {
 
     const dispatch = useDispatch();
-    const {posts} = useSelector(state => state.postsReducer);
+    const {posts, errorPosts} = useSelector(state => state.postsReducer);
 
     useEffect(() => {
         dispatch(getAllPosts());
     }, [])
 
     return (
-        <div className={css.posts}>
-            {posts && posts.map(post => <Post key={post.id} post={post}/>)}
-        </div>
+        <>
+            {errorPosts && <div>{errorPosts}</div>}
+            <div className={css.posts}>
+                {posts && posts.map(post => <Post key={post.id} post={post}/>)}
+            </div>
+        </>
     );
 };
 

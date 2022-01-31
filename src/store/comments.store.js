@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {commentsService} from "../services";
 
 export const getAllComments = createAsyncThunk(
@@ -14,16 +15,23 @@ export const getAllComments = createAsyncThunk(
 )
 
 const commentsSlice = createSlice({
-    name:'commentsSlice',
+    name: 'commentsSlice',
     initialState: {
-        comments: null
+        comments: null,
+        errorComments: null
     },
     reducers: {
         showComments: (state, action) => {
+            state.errorComments = null;
             state.comments = [...action.payload.comments];
         },
+    },
+    extraReducers: {
+        [getAllComments.rejected]: (state, action) => {
+            state.errorComments = action.payload;
+        }
     }
-})
+});
 
 export const commentsReducer = commentsSlice.reducer;
 

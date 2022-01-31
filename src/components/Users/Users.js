@@ -8,15 +8,18 @@ import {getAllUsers} from "../../store/users.store";
 export const Users = () => {
 
     const dispatch = useDispatch();
-    const {users} = useSelector(state => state.usersReducer);
+    const {users, errorUsers} = useSelector(state => state.usersReducer);
 
     useEffect(() => {
         dispatch(getAllUsers());
     }, []);
 
     return (
-        <div className={css.users}>
-            {users && users.map(user => <User key={user.id} user={user}/>)}
-        </div>
+        <>
+            {errorUsers && <div>{errorUsers}</div>}
+            <div className={css.users}>
+                {users && users.map(user => <User key={user.id} user={user}/>)}
+            </div>
+        </>
     );
 };

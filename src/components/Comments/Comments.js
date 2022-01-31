@@ -8,15 +8,18 @@ import css from './Comments.module.css';
 export const Comments = () => {
 
     const dispatch = useDispatch();
-    const {comments} = useSelector(state => state.commentsReducer);
+    const {comments, errorComments} = useSelector(state => state.commentsReducer);
 
     useEffect(() => {
         dispatch(getAllComments());
     },[])
 
     return (
-        <div className={css.comments}>
-            {comments && comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
-        </div>
+        <>
+            {errorComments && <div>{errorComments}</div>}
+            <div className={css.comments}>
+                {comments && comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            </div>
+        </>
     );
 };

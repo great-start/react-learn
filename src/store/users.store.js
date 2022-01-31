@@ -17,11 +17,18 @@ export const getAllUsers = createAsyncThunk(
 const usersStore = createSlice({
     name: 'usersStore',
     initialState: {
-        users: null
+        users: null,
+        errorUsers: null
     },
     reducers: {
         showUsers: (state,action) => {
+            state.errorUsers = null;
             state.users = action.payload.users;
+        }
+    },
+    extraReducers: {
+        [getAllUsers.rejected]: (state, action) => {
+            state.errorUsers = action.payload;
         }
     }
 })
