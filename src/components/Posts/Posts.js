@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 
 import {Post} from "./Post";
 import css from './Posts.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {getAllPosts} from "../../store/posts.store";
+import {getAllPosts} from "../../store";
 
 export const Posts = () => {
 
@@ -15,11 +15,9 @@ export const Posts = () => {
     }, [])
 
     return (
-        <>
-            <div className={css.posts}>
-                {posts && posts.map(post => <Post key={post.id} post={post}/>)}
-            </div>
-        </>
+        <div className={css.posts}>
+            {posts && posts.map(post => <Post key={post.id} post={post}/>)}
+        </div>
     );
 };
 

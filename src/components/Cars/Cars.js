@@ -10,14 +10,12 @@ const Cars = () => {
     const dispatch = useDispatch();
     const {cars} = useSelector(state => state.carsReducer);
 
-    console.log(cars);
-
     useEffect(() => {
         dispatch(getCars());
     },[])
 
     return (
-        <div className={}>
+        <div className={css.cars}>
             {cars && cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );

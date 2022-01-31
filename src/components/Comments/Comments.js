@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 
 import {Comment} from "./Comment";
-import {useDispatch, useSelector} from "react-redux";
 import {getAllComments} from "../../store";
+import css from './Comments.module.css';
 
 export const Comments = () => {
 
@@ -14,7 +15,7 @@ export const Comments = () => {
     },[])
 
     return (
-        <div>
+        <div className={css.comments}>
             {comments && comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
     );

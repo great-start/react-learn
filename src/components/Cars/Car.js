@@ -2,7 +2,7 @@ import React from 'react';
 
 import css from './Cars.module.css';
 
-export const Car = ({car: {id, model, price, year}}) => {
+export const Car = ({car: {model, price, year}}) => {
 
     return (
         <div className={css.car}>

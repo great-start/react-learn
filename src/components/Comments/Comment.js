@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from './Comments.module.css'
+import css from './Comments.module.css';
 
 export const Comment = ({comment: {id, name, body}}) => {
 

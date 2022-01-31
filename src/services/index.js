@@ -1,4 +1,5 @@
 export * from './axios.services';
 export * from './comments.service';
 export * from './posts.service';
-export * from './user.services'
+export * from './user.services';
+export * from './cars.service';

@@ -1,5 +1,12 @@
 .comment {
     background: white;
     border: 1px solid #b3bbc0;
-    margin-bottom: 5px;
+    width: 300px;
+}
+
+.comments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }

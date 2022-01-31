@@ -4,9 +4,16 @@
     padding: 2px 2px 2px 5px;
     margin-bottom: 5px;
     transition: all 500ms ease;
+    min-width: 300px;
 }
 
 .user:hover {
     background: #d4d8d9;
-    border-radius: 20px;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }

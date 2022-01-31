@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 
 import {User} from "./User";
-import {useDispatch, useSelector} from "react-redux";
+import css from './Users.module.css';
 import {getAllUsers} from "../../store/users.store";
 
 export const Users = () => {
@@ -14,10 +15,8 @@ export const Users = () => {
     }, []);
 
     return (
-        <>
-            <div>
-                {users && users.map(user => <User key={user.id} user={user}/>)}
-            </div>
-        </>
+        <div className={css.users}>
+            {users && users.map(user => <User key={user.id} user={user}/>)}
+        </div>
     );
 };
