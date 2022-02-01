@@ -1,16 +1,17 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {checkBox} from "../store/store.items";
+import {checkBox, deleteAction} from "../store/store.items";
 
-const Event = ({action, index}) => {
+const Event = ({action: {name, check}, index}) => {
 
     const dispatch = useDispatch();
 
     return (
         <div>
-            <input type="checkbox" onChange={(e) => dispatch(checkBox({index,e:e.target.checked}))}/>
-            <div>{action.name}</div>
-            <button>DELETE</button>
+            <input type="checkbox" checked={check} onChange={(e) => dispatch(checkBox({index,e:e.target.checked}))}/>
+            <div>{check}</div>
+            <div>{name}</div>
+            <button onClick={() => dispatch(deleteAction({index}))}>DELETE</button>
         </div>
     );
 };
