@@ -12,7 +12,6 @@ const storeActions = createSlice({
     initialState,
     reducers: {
         createAction: (state, action) => {
-            console.log(action.payload);
             state.actions.push({'name': action.payload, 'check': false});
             state.allCounter++;
         },

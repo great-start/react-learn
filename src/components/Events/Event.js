@@ -9,7 +9,6 @@ const Event = ({action: {name, check}, index}) => {
     return (
         <div>
             <input type="checkbox" checked={check} onChange={(e) => dispatch(checkBox({index,e:e.target.checked}))}/>
-            <div>{check}</div>
             <div>{name}</div>
             <button onClick={() => dispatch(deleteAction({index}))}>DELETE</button>
         </div>
