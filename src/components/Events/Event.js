@@ -11,7 +11,7 @@ export const Event = ({action: {name, check}, index}) => {
     return (
         <div className={css.event}>
             <input type="checkbox" checked={check} onChange={(e) => dispatch(checkBox({index,e:e.target.checked}))}/>
-            <h3 className={check ? css.checked : css.uncheked}>{name}</h3>
+            <h3 className={check ? css.checked : css.unchecked}>{name}</h3>
             <button onClick={() => dispatch(deleteAction({index}))}>DELETE</button>
         </div>
     );
