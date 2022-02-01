@@ -1,8 +1,7 @@
 import React from "react";
 
 import './App.css';
-import Form from "./components/Form/Form";
-import Events from "./components/Events/Events";
+import {Events, Form} from "./components";
 
 function App() {
 

@@ -2,9 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
+    background: #eeeeee;
 }
 
 .counters {
     display: flex;
+    gap: 20px;
 }
 
+.counters > h2 > span {
+    color: #72008b;
+}
+
+hr {
+    width: inherit;
+    height: 5px;
+    background: #adb8c0;
+    margin: 0;
+    border: none;
+}
