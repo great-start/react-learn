@@ -21,7 +21,7 @@ interface ILinks {
 }
 
 interface IFirstStage {
-    cores: [ ICoresItems ];
+    cores: ICoresItems[];
 }
 
 interface ICoresItems {
@@ -33,7 +33,7 @@ interface ICoresItems {
 }
 
 interface ISecondStage {
-    payloads: [IPayloadsItem];
+    payloads: IPayloadsItem[];
 }
 
 interface IPayloadsItem {
